@@ -28,6 +28,11 @@ function renderCart() {
 	cart.innerHTML="";
 	const products = JSON.parse(window.sessionStorage.getItem("Cart"));
 	// alert(products[0].id)
+
+	if (products.length === 0) {
+        return;
+    }
+	
 	products.map((product)=>{
 	 let li = document.createElement("li");
 		li.innerHTML=`${product.name} - ${product.price} `;
